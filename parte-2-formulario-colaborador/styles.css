@@ -1,0 +1,144 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #065A82;
+  --secondary: #1C7293;
+  --dark: #21295C;
+  --bg: #F5F5F5;
+  --white: #FFFFFF;
+  --text: #000000;
+  --grey: #808080;
+  --border: #CCCCCC;
+  --error: #C62828;
+  --success: #2E7D32;
+  --radius: 6px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 2rem 1rem;
+}
+
+.contenedor {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.campo-grupo {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-grupo label {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+input.invalido, select.invalido {
+  border-color: var(--error);
+  background: #FFEBEE;
+}
+
+input.valido, select.valido {
+  border-color: var(--success);
+}
+
+.campo-checkbox {
+  flex-direction: column;
+}
+
+.campo-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.msg-error {
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.msg-error.visible {
+  display: block;
+}
+
+#fortaleza {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.oculto {
+  display: none !important;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: var(--secondary);
+}
+
+#mensaje-exito {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #E8F5E9;
+  color: var(--success);
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  text-align: center;
+  font-weight: 700;
+}
