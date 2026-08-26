@@ -1,0 +1,141 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #065A82;
+  --secondary: #1C7293;
+  --dark: #21295C;
+  --bg: #F5F5F5;
+  --white: #FFFFFF;
+  --text: #000000;
+  --grey: #808080;
+  --border: #CCCCCC;
+  --radius: 6px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header h1 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#controles, #filtros {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+input, select, button {
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+button {
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: var(--secondary);
+}
+
+.filtro-grupo {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.btn-filtro-estado {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-filtro-estado.activo {
+  background: var(--primary);
+  color: var(--white);
+}
+
+#stats {
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.tarea {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 5px solid var(--grey);
+}
+
+.tarea.oculta {
+  display: none;
+}
+
+.tarea.estado-pendiente { border-left-color: #F57F17; }
+.tarea.estado-en-progreso { border-left-color: #065A82; }
+.tarea.estado-completada { border-left-color: #2E7D32; opacity: 0.85; }
+
+.badge-prioridad, .badge-estado {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.prioridad-alta { background: #FFEBEE; color: #C62828; }
+.prioridad-media { background: #FFF8E1; color: #F57F17; }
+.prioridad-baja { background: #E8F5E9; color: #2E7D32; }
+
+.badge-estado {
+  background: var(--bg);
+  color: var(--dark);
+  text-transform: capitalize;
+}
+
+.acciones-tarea {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.btn-avanzar { background: var(--secondary); }
+.btn-eliminar { background: #C62828; }
